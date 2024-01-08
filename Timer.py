@@ -1,0 +1,29 @@
+#Timer
+
+
+# import the time module 
+import time 
+
+# define the countdown func. 
+def countdown(z): 
+	
+	while z: 
+		mins, secs = divmod(z, 60) 
+		timer = '{:02d}:{:02d}'.format(mins, secs) 
+		print(timer, end="\r") 
+		time.sleep(1) 
+		z -= 1
+	
+	print('Fire in the hole!!') 
+
+
+# input time in seconds 
+z = input("Enter the time in seconds: ") 
+
+# function call 
+countdown(int(z)) 
+
+
+
+
+
