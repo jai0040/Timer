@@ -1,0 +1,45 @@
+This Python script appears to be a simple countdown timer. Here's a breakdown of the code:
+
+```python
+# Timer
+
+# Import the time module
+import time
+
+# Define the countdown function
+def countdown(z):
+    while z:
+        mins, secs = divmod(z, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        z -= 1
+    
+    print('Fire in the hole!!')
+
+# Input time in seconds from the user
+z = input("Enter the time in seconds: ")
+
+# Call the countdown function with the input time
+countdown(int(z))
+```
+
+Explanation:
+
+1. The code imports the `time` module to use functions related to time and sleep.
+
+2. The `countdown` function takes a parameter `z` representing the total time in seconds. Inside the function:
+   - It enters a while loop that continues until `z` becomes zero.
+   - It calculates minutes and seconds from the remaining time using `divmod`.
+   - Formats the minutes and seconds as a string with two digits for each using `'{:02d}:{:02d}'.format(mins, secs)`.
+   - Prints the formatted timer string using `print(timer, end="\r")`. The `end="\r"` is used to overwrite the previous output in the same line.
+   - Pauses the execution for 1 second using `time.sleep(1)`.
+   - Decreases the remaining time (`z`) by 1 in each iteration.
+
+3. After the countdown is complete, it prints 'Fire in the hole!!'.
+
+4. The user is prompted to input the time in seconds through the `input` function.
+
+5. The `countdown` function is then called with the input time converted to an integer.
+
+When you run this script, it will display a countdown in the format MM:SS, updating every second, until reaching zero, at which point it will print 'Fire in the hole!!'.
